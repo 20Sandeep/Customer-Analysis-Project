@@ -1,95 +1,69 @@
-Customer Feedback Emotion Analyzer
+ "Customer Feedback Emotion Analyzer"
+  A full-stack application that analyzes customer feedback and classifies emotions
+  using a fine-tuned DistilBERT-based Emotion Classifier. Built with a React frontend,
+  Python backend, and a custom-trained PyTorch model, the system provides real-time
+  emotion predictions for customer input.
 
-A full-stack application that analyzes customer feedback and classifies emotions using a fine-tuned DistilBERT-based Emotion Classifier.
-Built with a React frontend, Python backend, and a custom-trained PyTorch model, this system provides real-time emotion predictions for any customer input.
+overview:
+    Businesses receive large volumes of text feedback every day. This project
+    automatically analyzes that feedback and detects emotions across 28 categories.
+  emotions:
+    - joy
+    - anger
+    - sadness
+    - fear
+    - optimism
+    - love
+    - surprise
+    - and more (28 total categories)
 
- Overview
+features:
+  - Real-time emotion prediction from user text
+  - DistilBERT backbone with custom classifier layers
+  - Python backend built using FastAPI + PyTorch
+  - React-based frontend interface
+  - End-to-end integration: Frontend → Backend → Model
+  - Supports 28 emotion categories
+  - Easily extendable architecture
 
-Businesses receive large volumes of text feedback every day.
-This project automatically analyzes that feedback and detects emotions such as:
+model_architecture:
+  backbone: "DistilBERT"
+  details:
+    - DistilBERT embeddings
+    - 6 transformer layers
+    - Dropout: 0.2
+    - Linear classifier output: 28 classes
+  notes: "Balanced performance with lightweight model size."
 
-joy
+project_structure:
+  root:
+    - backend/
+    - src/
+    - README.md
+  backend:
+    - app.py
+    - emotion_model_final.pt
+    - other backend files...
+  frontend:
+    - App.js
+    - components/
+    - styles/
 
-anger
-
-sadness
-
-fear
-
-optimism
-
-love
-
-surprise
-
-and more (28 total categories)
-
-The system combines modern NLP transformers with a lightweight web interface to deliver fast and accurate emotion detection.
-
- Features
-
-Real-time emotion prediction from user text
-
-Pretrained DistilBERT backbone with custom classifier layers
-
-Backend API built using Python + PyTorch
-
-Interactive React UI with clean components
-
-End-to-end system: Frontend → Backend → Model
-
-Supports 28 distinct emotion labels
-
-Easy to extend with new datasets or features
-
-         
-
-Model Architecture
-
-The model uses a custom classifier built on top of DistilBERT:
-
-DistilBERT embeddings
-
-6 Transformer layers
-
-Additional dropout (0.2)
-
-Final linear layer → 28 output classes
-
-This gives a good balance of accuracy vs. speed.
-
-⚙️ Backend Setup
-Install dependencies:
-pip install -r requirements.txt
-
-Run backend:
-python backend/app.py
-
-Frontend Setup
-Install:
-npm install
-
-Start the development server:
-npm start
+backend_setup:
+  install_dependencies: "pip install -r requirements.txt"
+  run_server: "python backend/app.py"
 
 
-The app runs on:
+frontend_setup:
+  install_dependencies: "npm install"
+  run_frontend: "npm start"
+  url: "http://localhost:3000"
 
-http://localhost:3000
+future_enhancements:
+  - Multi-language emotion detection
+  - Audio/speech emotion recognition
+  - Dashboard for visualizing emotion trends
+  - Better graphs and confidence visualizations
+  - Deployment on cloud (Render, AWS, VPS)
 
-
-Make sure the backend is running to allow predictions.
-Future Enhancements
-
-Multi-language emotion detection
-
-Audio/speech emotion extraction
-
-Dashboard to visualize emotion trends
-
-Support for charts/graphs
-
-Real-time API deployment (Render / VPS / AWS)
-License
-
-This project is open for educational and development use.
+license: "Open for educational and development use."
