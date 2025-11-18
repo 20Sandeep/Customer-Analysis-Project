@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+Customer Feedback Emotion Analyzer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack application that analyzes customer feedback and classifies emotions using a fine-tuned DistilBERT-based Emotion Classifier.
+Built with a React frontend, Python backend, and a custom-trained PyTorch model, this system provides real-time emotion predictions for any customer input.
 
-## Available Scripts
+ Overview
 
-In the project directory, you can run:
+Businesses receive large volumes of text feedback every day.
+This project automatically analyzes that feedback and detects emotions such as:
 
-### `npm start`
+joy
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+anger
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+sadness
 
-### `npm test`
+fear
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+optimism
 
-### `npm run build`
+love
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+surprise
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+and more (28 total categories)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The system combines modern NLP transformers with a lightweight web interface to deliver fast and accurate emotion detection.
 
-### `npm run eject`
+ Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Real-time emotion prediction from user text
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Pretrained DistilBERT backbone with custom classifier layers
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Backend API built using Python + PyTorch
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Interactive React UI with clean components
 
-## Learn More
+End-to-end system: Frontend → Backend → Model
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Supports 28 distinct emotion labels
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Easy to extend with new datasets or features
 
-### Code Splitting
+         
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Model Architecture
 
-### Analyzing the Bundle Size
+The model uses a custom classifier built on top of DistilBERT:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+DistilBERT embeddings
 
-### Making a Progressive Web App
+6 Transformer layers
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Additional dropout (0.2)
 
-### Advanced Configuration
+Final linear layer → 28 output classes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This gives a good balance of accuracy vs. speed.
 
-### Deployment
+⚙️ Backend Setup
+Install dependencies:
+pip install -r requirements.txt
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Run backend:
+python backend/app.py
 
-### `npm run build` fails to minify
+Frontend Setup
+Install:
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Start the development server:
+npm start
+
+
+The app runs on:
+
+http://localhost:3000
+
+
+Make sure the backend is running to allow predictions.
+Future Enhancements
+
+Multi-language emotion detection
+
+Audio/speech emotion extraction
+
+Dashboard to visualize emotion trends
+
+Support for charts/graphs
+
+Real-time API deployment (Render / VPS / AWS)
+License
+
+This project is open for educational and development use.
